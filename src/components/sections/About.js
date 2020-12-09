@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import ImageProfile from 'components/ImageProfile';
 import { Typography, Row, Col, List } from 'antd';
 import { CaretRightOutlined } from '@ant-design/icons';
@@ -18,7 +18,7 @@ const biggerText = {
     fontSize: '1.1rem'
 }
 
-const About = () => {
+const About = ({ ref }) => {
     const skills = [
         {
             title: 'Nodejs',
@@ -43,7 +43,7 @@ const About = () => {
     const isMobile = useMediaQuery({ query: '(max-width: 760px)' })
 
     return (
-        <div className="about section">
+        <div className="about section" id="about">
             <Row>
                 <Col>
                     <Title level={1} style={lightSlateText}>About Me</Title><hr className="title-underline"></hr>
@@ -54,7 +54,7 @@ const About = () => {
                     <Title level={4} style={slateText}>Hello! I'm <span className="highlight">Nanda</span>, a student from <span className="highlight">Institut Teknologi Bandung!</span></Title>
                     <Text style={{ ...slateText, ...biggerText }}>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. "
                     <br /><br />
-                    Here are a few skills I picked up recently:
+                    Here are a few <span className="highlight">skills</span> I picked up recently:
                     </Text>
                     <Row>
                         <Col>
@@ -65,7 +65,7 @@ const About = () => {
                                 renderItem={item => (
                                     <List.Item>
                                         <List.Item.Meta
-                                            title={<span className="skill-list" style={biggerText}><span className="highlight"><CaretRightOutlined /></span> {item.title}</span>}
+                                            title={<span className="skill-list" style={biggerText}><CaretRightOutlined /> <span className="highlight">{item.title}</span></span>}
                                         />
                                     </List.Item>
                                 )}

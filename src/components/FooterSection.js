@@ -1,10 +1,9 @@
 import React from 'react';
 import 'components/styles.css';
-import { Menu } from 'antd';
 
 const FooterSection = () => {
     return (
-        <div>
+        <div class="footer">
             ©2020 Created by Ananda Yulizar
         </div>
     )

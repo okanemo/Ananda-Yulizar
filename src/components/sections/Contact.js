@@ -1,15 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Typography, Row, Col, Form, Input, Button } from 'antd';
 
-const { Title, Text } = Typography;
+const { Title } = Typography;
 const { TextArea } = Input;
 
 const lightSlateText = {
     color: '#ccd6f6'
-}
-
-const slateText = {
-    color: '#8892b0'
 }
 
 const biggerText = {
@@ -42,7 +38,7 @@ const Contact = () => {
     }
 
     return (
-        <div className="contact section">
+        <div className="contact section" id="contact">
             <Row>
                 <Col style={{ margin: 'auto' }}>
                     <Title level={1} style={lightSlateText}>Contact Me</Title><hr className="title-underline"></hr>
@@ -55,6 +51,7 @@ const Contact = () => {
                         name="message"
                         onFinish={onFinish}
                         onFinishFailed={onFinishFailed}
+                        size="large"
                     >
                         <Form.Item
                             label={<label style={{ ...lightSlateText, ...biggerText }}>Name</label>}

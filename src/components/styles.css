@@ -3,6 +3,7 @@
 /* General */
 .section {
     min-height: calc(100vh - 64px);
+    padding-top: 64px;
     /* border: 1px solid white; */
     
 }
@@ -107,6 +108,14 @@ img:hover {
     justify-content: center;
     flex-direction: column;
 }
+
+/* Footer  */
+
+.footer {
+    text-align: center;
+}
+
+/* Responsive  */
 
 @media only screen and (max-width: 760px) {
     .hero h1 {
