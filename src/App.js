@@ -20,7 +20,7 @@ function App() {
       <Content className="content">
         <Hero />
         <About />
-        <Skills />
+        {/* <Skills /> */}
         <Contact />
       </Content>
       <Footer>

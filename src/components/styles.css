@@ -1,11 +1,10 @@
 @import '~antd/dist/antd.css';
 
+/* General */
 .section {
     min-height: calc(100vh - 64px);
     /* border: 1px solid white; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    
 }
 
 .title-underline {
@@ -32,6 +31,7 @@
     cursor: pointer;
 }
 
+/* Hero page */
 #hero-btn {
     font-size: 20px;
     width: 40px;
@@ -61,7 +61,11 @@
     margin-bottom: 5vh;
 }
 
+/* About Section */
 .about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
 }
 
@@ -74,6 +78,12 @@ img {
     position: relative;
     z-index: 1;
     cursor: pointer;
+    transition: 0.3s ease-out;
+}
+
+img:hover {
+    transition: 0.3s ease-out;
+    transform: translate(0, -20px);
 }
 
 .back-image {
@@ -85,4 +95,22 @@ img {
     left: 8%;
     top: 8%;
     border: 5px solid #64ffda;
+}
+
+.skill-list {
+    color: #8892b0;
+}
+
+/* Contact Section  */
+.contact {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+@media only screen and (max-width: 760px) {
+    .hero h1 {
+        font-size: 40px;
+        font-weight: 700;
+    }
 }

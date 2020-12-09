@@ -1,13 +1,91 @@
 import React, { useState, useEffect } from 'react';
-import { Typography } from 'antd';
+import { Typography, Row, Col, Form, Input, Button } from 'antd';
 
 const { Title, Text } = Typography;
+const { TextArea } = Input;
+
+const lightSlateText = {
+    color: '#ccd6f6'
+}
+
+const slateText = {
+    color: '#8892b0'
+}
+
+const biggerText = {
+    fontSize: '1.1rem',
+}
+
+const layout = {
+    labelCol: {
+        span: 4,
+    },
+    wrapperCol: {
+        span: 20
+    }
+};
+
+const tailLayout = {
+    wrapperCol: {
+        offset: 4,
+        span: 16
+    }
+}
 
 const Contact = () => {
+    const onFinish = (values) => {
+        console.log('Success:', values);
+    }
+
+    const onFinishFailed = (errorInfo) => {
+        console.log('Error: ', errorInfo);
+    }
+
     return (
         <div className="contact section">
-            <Title level={2}>Contact Me</Title>
-            <Text>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</Text>
+            <Row>
+                <Col style={{ margin: 'auto' }}>
+                    <Title level={1} style={lightSlateText}>Contact Me</Title><hr className="title-underline"></hr>
+                </Col>
+            </Row>
+            <Row>
+                <Col span={24}>
+                    <Form
+                        {...layout}
+                        name="message"
+                        onFinish={onFinish}
+                        onFinishFailed={onFinishFailed}
+                    >
+                        <Form.Item
+                            label={<label style={{ ...lightSlateText, ...biggerText }}>Name</label>}
+                            name="name"
+                        >
+                            <Input placeholder="Enter your name..." autoComplete="off" />
+                        </Form.Item>
+
+                        <Form.Item
+                            label={<label style={{ ...lightSlateText, ...biggerText }}>Email</label>}
+                            name="email"
+                        >
+                            <Input placeholder="Enter your email..." autoComplete="off" />
+                        </Form.Item>
+
+                        <Form.Item
+                            label={<label style={{ ...lightSlateText, ...biggerText }}>Message</label>}
+                            name="message"
+                        >
+                            <TextArea rows={4} placeholder="Enter your message..." autoComplete="off" />
+                        </Form.Item>
+
+                        <Form.Item {...tailLayout}>
+                            <Button type="primary" htmlType="submit">
+                                Submit
+                            </Button>
+                        </Form.Item>
+                    </Form>
+                </Col>
+            </Row>
+
         </div>
 
     )

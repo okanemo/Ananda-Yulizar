@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Row, Col, Typography, Space } from 'antd';
 import { DownOutlined, GithubFilled, LinkedinFilled, InstagramFilled, TwitterCircleFilled } from '@ant-design/icons';
+import { useMediaQuery } from 'react-responsive';
 
 import 'components/styles.css';
 
@@ -15,12 +16,14 @@ const slateText = {
 }
 
 const Hero = () => {
+    const isMobile = useMediaQuery({ query: '(max-width: 760px)' })
+
     return (
         <div className="hero section">
             <Row>
                 <Col>
                     <Title level={1} style={lightSlateText}>Hello, I'm Nanda!</Title>
-                    <Title level={3} id="secondary" style={slateText}>Frontend Web Developer | Informatics Undergraduate | Gamer</Title>
+                    <Title level={isMobile ? 5 : 3} id="secondary" style={slateText}>Frontend Web Developer | Informatics Undergraduate | Gamer</Title>
                     <br></br>
                     <div className="icons">
                         <Space size="large">
